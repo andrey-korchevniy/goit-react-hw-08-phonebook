@@ -2,7 +2,6 @@ import {
   Row,
   Cell,
   CellAmount,
-  DeleteBtn,
   DeleteForeverBtn,
   CellAction,
 } from './ContactRow.styled';
