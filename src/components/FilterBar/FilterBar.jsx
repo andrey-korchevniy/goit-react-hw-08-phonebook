@@ -7,23 +7,15 @@ import {
 } from './FilterBar.styled';
 import { Formik } from 'formik';
 import { SvgSearch, SvgDelete } from 'images/Svg';
-import {
-  setTrashFilter,
-  clearFilter,
-  setContactsFilter,
-} from 'redux/filterSlice';
+import { clearFilter, setContactsFilter } from 'redux/filterSlice';
 
-export const FilterBar = ({ trash }) => {
-  const { contactsFilter, trashFilter } = useSelector(state => state.filter);
-  const filter = trash ? trashFilter : contactsFilter;
-  console.log(trash, 'trash', trashFilter, 'conta', contactsFilter);
+export const FilterBar = () => {
+  const { filter } = useSelector(state => state.filter);
 
   const dispatch = useDispatch();
 
   const onSubmit = data => {
-    trash
-      ? dispatch(setTrashFilter(data.currentTarget.value))
-      : dispatch(setContactsFilter(data.currentTarget.value));
+    dispatch(setContactsFilter(data.currentTarget.value));
   };
 
   const onClear = () => {

@@ -4,7 +4,6 @@ import { Spinner } from 'components/UI/Spinner/Spinner';
 
 const Layout = lazy(() => import('./layout/Layout'));
 const Contacts = lazy(() => import('./pages/Contacts'));
-const Trash = lazy(() => import('./pages/Trash/Trash'));
 const NewContact = lazy(() => import('./pages/NewContact/NewContact'));
 
 export const App = () => {
@@ -13,7 +12,7 @@ export const App = () => {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Contacts />} />
-          <Route path="trash" element={<Trash />} />
+          <Route path="login" element={<LogIn />} />
           <Route path="newcontact" element={<NewContact />} />
         </Route>
       </Routes>

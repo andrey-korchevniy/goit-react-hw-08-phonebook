@@ -28,14 +28,6 @@ export const mockApi = createApi({
       }),
       invalidatesTags: ['TagContact'],
     }),
-    toTrashContact: builder.mutation({
-      query: data => ({
-        url: `/contacts/${data.id}`,
-        method: 'PUT',
-        body: data,
-      }),
-      invalidatesTags: ['TagContact'],
-    }),
   }),
 });
 
@@ -43,5 +35,4 @@ export const {
   useGetMockApiQuery,
   useCreateContactMutation,
   useDeleteContactMutation,
-  useToTrashContactMutation,
 } = mockApi;

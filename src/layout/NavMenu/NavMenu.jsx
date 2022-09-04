@@ -1,7 +1,7 @@
 import { MenuItems, Menu, P, StyledLink, Item } from './NavMenu.styled';
 import { Logo } from 'components/UI/Logo/Logo';
 import { AddNewContactButton } from 'components/UI/AddNewContactButton/AddNewContactButton';
-import { SvgContact, SvgTrash } from 'images/Svg';
+import { SvgContact } from 'images/Svg';
 import { useGetMockApiQuery } from 'redux/mockApiSlice';
 
 export const NavMenu = () => {
@@ -21,15 +21,6 @@ export const NavMenu = () => {
             <Item>
               <P>Contacts </P>
               <span>{noDeleted}</span>
-            </Item>
-          </StyledLink>
-        </li>
-        <li>
-          <StyledLink to="/trash">
-            <SvgTrash />
-            <Item>
-              <P>Trash</P>
-              <span>{isDeleted}</span>
             </Item>
           </StyledLink>
         </li>

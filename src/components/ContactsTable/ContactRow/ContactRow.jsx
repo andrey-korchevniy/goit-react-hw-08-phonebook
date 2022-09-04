@@ -8,10 +8,7 @@ import {
 } from './ContactRow.styled';
 import PropTypes from 'prop-types';
 import { SvgDelete, SvgRecovery } from 'images/Svg';
-import {
-  useDeleteContactMutation,
-  useToTrashContactMutation,
-} from 'redux/mockApiSlice';
+import { useDeleteContactMutation } from 'redux/mockApiSlice';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
 Notify.init({ position: 'center-top' });
@@ -23,19 +20,6 @@ export const ContactRow = ({ id, name, number, isDeleted }) => {
   const handleDeleteContact = () => {
     deleteContact(id);
     Notify.success('Yor contact has been deleted forever');
-  };
-
-  // delete to trash
-  const [toTrashContact, { isLoading, isSuccess }] =
-    useToTrashContactMutation();
-
-  const handleDeleteBtnClick = () => {
-    const message = isDeleted
-      ? 'Your contact has been restored'
-      : 'Your contact has been moved to Trash';
-    isDeleted = !isDeleted;
-    toTrashContact({ id, isDeleted });
-    Notify.success(message);
   };
 
   return (

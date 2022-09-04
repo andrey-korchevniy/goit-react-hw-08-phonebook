@@ -4,22 +4,20 @@ import { useGetMockApiQuery } from 'redux/mockApiSlice';
 import PropTypes from 'prop-types';
 import { useSelector } from 'react-redux';
 
-export const ContactsTable = ({ trash }) => {
+export const ContactsTable = () => {
   let contactsForRender = [];
   const { data, isSuccess, isError } = useGetMockApiQuery('', {
     refetchOnFocus: true,
   });
 
-  const { contactsFilter, trashFilter } = useSelector(state => state.filter);
-  const filter = trash ? trashFilter : contactsFilter;
+  const { filter } = useSelector(state => state.filter);
 
   // makes a list for render if request is success
   if (isSuccess) {
     contactsForRender = data
       .filter(
         ({ name, phone, isDeleted }) =>
-          isDeleted === trash &&
-          (name.includes(filter) || phone.includes(filter))
+          name.includes(filter) || phone.includes(filter)
       )
       .reverse();
   }
@@ -51,8 +49,4 @@ export const ContactsTable = ({ trash }) => {
       )}
     </>
   );
-};
-
-ContactsTable.propTypes = {
-  trash: PropTypes.bool.isRequired,
 };
