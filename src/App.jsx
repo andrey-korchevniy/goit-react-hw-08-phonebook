@@ -5,6 +5,7 @@ import { Spinner } from 'components/UI/Spinner/Spinner';
 const Layout = lazy(() => import('./layout/Layout'));
 const Contacts = lazy(() => import('./pages/Contacts'));
 const NewContact = lazy(() => import('./pages/NewContact/NewContact'));
+const LogIn = lazy(() => import('./pages/LogIn'));
 
 export const App = () => {
   return (

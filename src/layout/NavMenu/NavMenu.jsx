@@ -6,9 +6,7 @@ import { useGetMockApiQuery } from 'redux/mockApiSlice';
 
 export const NavMenu = () => {
   const { data } = useGetMockApiQuery(''); // get contacts list from state
-  const noDeleted =
-    data && data.filter(item => item.isDeleted === false).length; // calculate contacts
-  const isDeleted = data && data.length - noDeleted; // calculate deleted contacts
+  const contactsQuantity = data && data.length; // calculate contacts quantity
 
   return (
     <Menu>
@@ -20,7 +18,7 @@ export const NavMenu = () => {
             <SvgContact />
             <Item>
               <P>Contacts </P>
-              <span>{noDeleted}</span>
+              <span>{contactsQuantity}</span>
             </Item>
           </StyledLink>
         </li>

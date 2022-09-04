@@ -5,9 +5,9 @@ import { PhoneInputField } from './PhoneInputField/PhoneInputField';
 import 'react-phone-input-2/lib/style.css';
 import React from 'react';
 
-// line 'Name' or 'Phone' - depends of props
+// line 'Name' or 'Number' - depends of props
 export const ContactInputLine = ({ type, name, title, placeholder }) => {
-  const component = name === 'phone' ? PhoneInputField : null;
+  const component = name === 'number' ? PhoneInputField : null;
 
   return (
     <Label>

@@ -16,8 +16,7 @@ export const ContactsTable = () => {
   if (isSuccess) {
     contactsForRender = data
       .filter(
-        ({ name, phone, isDeleted }) =>
-          name.includes(filter) || phone.includes(filter)
+        ({ name, number }) => name.includes(filter) || number.includes(filter)
       )
       .reverse();
   }
@@ -33,14 +32,8 @@ export const ContactsTable = () => {
           </tr>
         </HeadRow>
         <tbody>
-          {contactsForRender.map(({ id, name, phone, isDeleted }) => (
-            <ContactRow
-              key={id}
-              id={id}
-              name={name}
-              number={phone}
-              isDeleted={isDeleted}
-            />
+          {contactsForRender.map(({ id, name, number }) => (
+            <ContactRow key={id} id={id} name={name} number={number} />
           ))}
         </tbody>
       </Table>

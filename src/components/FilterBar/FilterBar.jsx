@@ -7,7 +7,7 @@ import {
 } from './FilterBar.styled';
 import { Formik } from 'formik';
 import { SvgSearch, SvgDelete } from 'images/Svg';
-import { clearFilter, setContactsFilter } from 'redux/filterSlice';
+import { clearFilter, setFilter } from 'redux/filterSlice';
 
 export const FilterBar = () => {
   const { filter } = useSelector(state => state.filter);
@@ -15,7 +15,7 @@ export const FilterBar = () => {
   const dispatch = useDispatch();
 
   const onSubmit = data => {
-    dispatch(setContactsFilter(data.currentTarget.value));
+    dispatch(setFilter(data.currentTarget.value));
   };
 
   const onClear = () => {

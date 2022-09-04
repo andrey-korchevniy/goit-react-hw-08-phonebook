@@ -5,7 +5,7 @@ export const PhoneInputField = ({ field, form }) => {
     <PhoneInputLine
       country={'ua'}
       value={field.value}
-      onChange={phone => (form.values.phone = phone)}
+      onChange={number => (form.values.number = number)}
     />
   );
 };

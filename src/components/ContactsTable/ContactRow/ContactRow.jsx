@@ -7,13 +7,13 @@ import {
   CellAction,
 } from './ContactRow.styled';
 import PropTypes from 'prop-types';
-import { SvgDelete, SvgRecovery } from 'images/Svg';
+import { SvgDelete } from 'images/Svg';
 import { useDeleteContactMutation } from 'redux/mockApiSlice';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
 Notify.init({ position: 'center-top' });
 
-export const ContactRow = ({ id, name, number, isDeleted }) => {
+export const ContactRow = ({ id, name, number }) => {
   // processing deleting forever
   const [deleteContact] = useDeleteContactMutation(id);
 
@@ -27,19 +27,9 @@ export const ContactRow = ({ id, name, number, isDeleted }) => {
       <Cell>{name}</Cell>
       <CellAmount>{number}</CellAmount>
       <CellAction>
-        <DeleteBtn
-          onClick={handleDeleteBtnClick}
-          disabled={isLoading || isSuccess}
-        >
-          {isDeleted ? <SvgRecovery /> : <SvgDelete />}
-        </DeleteBtn>
-        {isDeleted ? (
-          <DeleteForeverBtn onClick={handleDeleteContact}>
-            Delete forever
-          </DeleteForeverBtn>
-        ) : (
-          <></>
-        )}
+        <DeleteForeverBtn onClick={handleDeleteContact}>
+          <SvgDelete />
+        </DeleteForeverBtn>
       </CellAction>
     </Row>
   );
@@ -49,5 +39,4 @@ ContactRow.propTypes = {
   id: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   number: PropTypes.string.isRequired,
-  isDeleted: PropTypes.bool.isRequired,
 };

@@ -40,18 +40,17 @@ export const NewContactForm = () => {
   Notify.init({ position: 'center-top' });
 
   async function handleSubmit(formData) {
-    const { name, phone } = formData;
+    const { name, number } = formData;
 
     // check if there are any such contacts
     if (data.map(el => (el = el.name)).includes(name)) {
       Notify.failure(`A contact with name ${name} already is in your book`);
-    } else if (data.map(el => (el = el.phone)).includes(phone)) {
-      Notify.failure(`A contact with phone ${phone} already is in your book`);
+    } else if (data.map(el => (el = el.number)).includes(number)) {
+      Notify.failure(`A contact with phone ${number} already is in your book`);
     } else {
       createContact({
         name: name,
-        phone: phone,
-        isDeleted: false,
+        number: number,
       });
     }
   }
@@ -59,7 +58,7 @@ export const NewContactForm = () => {
   return (
     <>
       <Formik
-        initialValues={{ name: '', phone: '' }}
+        initialValues={{ name: '', number: '' }}
         onSubmit={handleSubmit}
         validationSchema={validationSchema}
       >
@@ -76,7 +75,7 @@ export const NewContactForm = () => {
           />
           <ContactInputLine
             type="tel"
-            name="phone"
+            name="number"
             title="Phone number must contain only numbers, spaces, hyphen and +"
             placeholder="Phone number"
           />
