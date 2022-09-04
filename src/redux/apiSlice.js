@@ -9,10 +9,12 @@ export const mockApi = createApi({
   }),
   tagTypes: ['TagContact'],
   endpoints: builder => ({
+    // get all contacts
     getMockApi: builder.query({
       query: () => `/contacts`,
       providesTags: ['TagContact'],
     }),
+    // create a new contact
     createContact: builder.mutation({
       query: newContact => ({
         url: '/contacts',
@@ -21,6 +23,7 @@ export const mockApi = createApi({
       }),
       invalidatesTags: ['TagContact'],
     }),
+    // delete contact
     deleteContact: builder.mutation({
       query: id => ({
         url: `/contacts/${id}`,

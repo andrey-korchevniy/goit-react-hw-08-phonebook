@@ -1,6 +1,6 @@
 import { Table, HeadRow, HeadCell } from './ContactsTable.styled';
 import { ContactRow } from './ContactRow/ContactRow';
-import { useGetMockApiQuery } from 'redux/mockApiSlice';
+import { useGetMockApiQuery } from 'redux/apiSlice';
 import { useSelector } from 'react-redux';
 
 export const ContactsTable = () => {

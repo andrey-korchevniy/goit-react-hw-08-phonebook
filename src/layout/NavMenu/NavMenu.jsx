@@ -1,8 +1,9 @@
 import { MenuItems, Menu, P, StyledLink, Item } from './NavMenu.styled';
 import { Logo } from 'components/UI/Logo/Logo';
 import { AddNewContactButton } from 'components/UI/AddNewContactButton/AddNewContactButton';
-import { SvgContact } from 'images/Svg';
-import { useGetMockApiQuery } from 'redux/mockApiSlice';
+import { useGetMockApiQuery } from 'redux/apiSlice';
+import { AuthMenu } from './AuthMenu/AuthMenu';
+import { RiContactsFill } from 'react-icons/ri';
 
 export const NavMenu = () => {
   const { data } = useGetMockApiQuery(''); // get contacts list from state
@@ -15,13 +16,15 @@ export const NavMenu = () => {
       <MenuItems>
         <li>
           <StyledLink to="/">
-            <SvgContact />
+            <RiContactsFill />
             <Item>
               <P>Contacts </P>
               <span>{contactsQuantity}</span>
             </Item>
           </StyledLink>
         </li>
+        <hr></hr>
+        <AuthMenu />
       </MenuItems>
     </Menu>
   );

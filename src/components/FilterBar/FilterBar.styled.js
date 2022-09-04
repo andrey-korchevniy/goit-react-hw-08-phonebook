@@ -29,8 +29,8 @@ export const FilterField = styled(Field)`
 `;
 export const FilterIcon = styled.div`
   position: absolute;
-  top: 10px;
-  left: 5px;
+  top: 15px;
+  left: 12px;
   height: 40px;
   width: 40px;
   background-color: transparent;

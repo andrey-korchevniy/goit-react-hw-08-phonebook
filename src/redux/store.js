@@ -1,5 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit';
-import { mockApi } from './mockApiSlice';
+import { mockApi } from './apiSlice';
 import { setupListeners } from '@reduxjs/toolkit/dist/query';
 import { filterSlice } from './filterSlice';
 

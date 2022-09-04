@@ -6,8 +6,9 @@ import {
   ClearFilterBtn,
 } from './FilterBar.styled';
 import { Formik } from 'formik';
-import { SvgSearch, SvgDelete } from 'images/Svg';
 import { clearFilter, setFilter } from 'redux/filterSlice';
+import { FaSearch } from 'react-icons/fa';
+import { CgClose } from 'react-icons/cg';
 
 export const FilterBar = () => {
   const { filter } = useSelector(state => state.filter);
@@ -26,7 +27,7 @@ export const FilterBar = () => {
     <Formik initialValues={''}>
       <FilterForm>
         <FilterIcon>
-          <SvgSearch />
+          <FaSearch />
         </FilterIcon>
         <FilterField
           type="text"
@@ -38,7 +39,7 @@ export const FilterBar = () => {
           autoComplete="off"
         />
         <ClearFilterBtn type="clear" onClick={onClear}>
-          <SvgDelete />
+          <CgClose size="2em" />
         </ClearFilterBtn>
       </FilterForm>
     </Formik>

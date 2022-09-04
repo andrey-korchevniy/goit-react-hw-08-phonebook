@@ -6,9 +6,9 @@ import {
   CellAction,
 } from './ContactRow.styled';
 import PropTypes from 'prop-types';
-import { SvgDelete } from 'images/Svg';
-import { useDeleteContactMutation } from 'redux/mockApiSlice';
+import { useDeleteContactMutation } from 'redux/apiSlice';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
+import { RiDeleteBin5Line } from 'react-icons/ri';
 
 Notify.init({ position: 'center-top' });
 
@@ -27,7 +27,7 @@ export const ContactRow = ({ id, name, number }) => {
       <CellAmount>{number}</CellAmount>
       <CellAction>
         <DeleteForeverBtn onClick={handleDeleteContact}>
-          <SvgDelete />
+          <RiDeleteBin5Line size="1.2em" />
         </DeleteForeverBtn>
       </CellAction>
     </Row>

@@ -1,13 +1,13 @@
 import { Link } from 'react-router-dom';
-import { SvgDelete } from 'images/Svg';
 import { NewContactForm } from 'components/NewContactForm/NewContactForm';
+import { CgClose } from 'react-icons/cg';
 
 const NewContact = () => {
   return (
     <>
       <Link to={'/'}>
         {' '}
-        <SvgDelete />
+        <CgClose size="2em" />
       </Link>
       <NewContactForm />
     </>

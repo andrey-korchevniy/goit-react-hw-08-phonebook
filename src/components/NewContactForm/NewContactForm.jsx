@@ -1,9 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
-import {
-  useCreateContactMutation,
-  useGetMockApiQuery,
-} from 'redux/mockApiSlice';
+import { useCreateContactMutation, useGetMockApiQuery } from 'redux/apiSlice';
 import { Formik, Form } from 'formik';
 import * as yup from 'yup';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
