@@ -21,7 +21,7 @@ export const NavMenu = () => {
         <RiContactsFill />
         <Item>
           <P>Contacts </P>
-          <span>{contactsQuantity}</span>
+          {isLoggedIn ? <span>{contactsQuantity}</span> : null}
         </Item>
       </StyledLink>
       <hr></hr>
