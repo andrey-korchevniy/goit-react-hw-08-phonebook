@@ -1,15 +1,16 @@
 import { Table, HeadRow, HeadCell } from './ContactsTable.styled';
 import { ContactRow } from './ContactRow/ContactRow';
-import { useGetMockApiQuery } from 'redux/apiSlice';
+import { useGetServerApiQuery } from 'redux/apiSlice';
+import { getFilter } from 'redux/selectors';
 import { useSelector } from 'react-redux';
 
 export const ContactsTable = () => {
   let contactsForRender = [];
-  const { data, isSuccess, isError } = useGetMockApiQuery('', {
+  const { data, isSuccess, isError } = useGetServerApiQuery('', {
     refetchOnFocus: true,
   });
 
-  const { filter } = useSelector(state => state.filter);
+  const filter = useSelector(getFilter);
 
   // makes a list for render if request is success
   if (isSuccess) {

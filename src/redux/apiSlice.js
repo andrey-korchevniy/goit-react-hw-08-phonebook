@@ -1,16 +1,23 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 import { BASE_URL } from 'constants/constants';
 
-export const mockApi = createApi({
-  reducerPath: 'mockApi',
+export const serverApi = createApi({
+  reducerPath: 'serverApi',
   refetchOnFocus: true,
   baseQuery: fetchBaseQuery({
     baseUrl: BASE_URL,
+    prepareHeaders: (headers, { getState }) => {
+      const token = getState().auth.token;
+      if (token) {
+        headers.set('authorization', `Bearer ${token}`);
+      }
+      return headers;
+    },
   }),
   tagTypes: ['TagContact'],
   endpoints: builder => ({
     // get all contacts
-    getMockApi: builder.query({
+    getServerApi: builder.query({
       query: () => `/contacts`,
       providesTags: ['TagContact'],
     }),
@@ -35,7 +42,7 @@ export const mockApi = createApi({
 });
 
 export const {
-  useGetMockApiQuery,
+  useGetServerApiQuery,
   useCreateContactMutation,
   useDeleteContactMutation,
-} = mockApi;
+} = serverApi;

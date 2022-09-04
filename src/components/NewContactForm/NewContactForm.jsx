@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
-import { useCreateContactMutation, useGetMockApiQuery } from 'redux/apiSlice';
+import { useCreateContactMutation, useGetServerApiQuery } from 'redux/apiSlice';
 import { Formik, Form } from 'formik';
 import * as yup from 'yup';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
@@ -16,7 +16,7 @@ export const NewContactForm = () => {
   const history = useNavigate();
 
   // get contacts list
-  const { data } = useGetMockApiQuery({ refetchOnFocus: true });
+  const { data } = useGetServerApiQuery({ refetchOnFocus: true });
 
   const [createContact, { isError, isSuccess, isLoading }] =
     useCreateContactMutation();

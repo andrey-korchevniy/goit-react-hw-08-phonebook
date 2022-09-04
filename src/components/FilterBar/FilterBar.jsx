@@ -6,12 +6,13 @@ import {
   ClearFilterBtn,
 } from './FilterBar.styled';
 import { Formik } from 'formik';
-import { clearFilter, setFilter } from 'redux/filterSlice';
+import { clearFilter, setFilter } from 'redux/filter/filterSlice';
 import { FaSearch } from 'react-icons/fa';
 import { CgClose } from 'react-icons/cg';
+import { getFilter } from 'redux/selectors';
 
 export const FilterBar = () => {
-  const { filter } = useSelector(state => state.filter);
+  const filter = useSelector(getFilter);
 
   const dispatch = useDispatch();
 

@@ -1,31 +1,31 @@
-import { MenuItems, Menu, P, StyledLink, Item } from './NavMenu.styled';
+import { Menu, P, StyledLink, Item } from './NavMenu.styled';
 import { Logo } from 'components/UI/Logo/Logo';
 import { AddNewContactButton } from 'components/UI/AddNewContactButton/AddNewContactButton';
-import { useGetMockApiQuery } from 'redux/apiSlice';
+import { useGetServerApiQuery } from 'redux/apiSlice';
 import { AuthMenu } from './AuthMenu/AuthMenu';
 import { RiContactsFill } from 'react-icons/ri';
+import { useSelector } from 'react-redux';
+import { getIsLoggedIn } from 'redux/selectors';
+import { UserMenu } from './UserMenu/UserMenu';
 
 export const NavMenu = () => {
-  const { data } = useGetMockApiQuery(''); // get contacts list from state
+  const { data } = useGetServerApiQuery(''); // get contacts list from state
   const contactsQuantity = data && data.length; // calculate contacts quantity
+  const isLoggedIn = useSelector(getIsLoggedIn);
 
   return (
     <Menu>
       <Logo to="/" />
       <AddNewContactButton />
-      <MenuItems>
-        <li>
-          <StyledLink to="/">
-            <RiContactsFill />
-            <Item>
-              <P>Contacts </P>
-              <span>{contactsQuantity}</span>
-            </Item>
-          </StyledLink>
-        </li>
-        <hr></hr>
-        <AuthMenu />
-      </MenuItems>
+      <StyledLink to="/">
+        <RiContactsFill />
+        <Item>
+          <P>Contacts </P>
+          <span>{contactsQuantity}</span>
+        </Item>
+      </StyledLink>
+      <hr></hr>
+      {isLoggedIn ? <UserMenu /> : <AuthMenu />}
     </Menu>
   );
 };

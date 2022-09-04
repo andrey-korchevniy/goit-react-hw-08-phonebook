@@ -1,6 +1,10 @@
 import AuthForm from 'components/AuthForm/AuthForm';
+import { useDispatch } from 'react-redux';
+import { register } from 'redux/auth/auth-operations';
 
 function SignUp() {
+  const dispatch = useDispatch();
+
   const handleSubmit = formData => {
     formData.preventDefault();
 
@@ -9,6 +13,7 @@ function SignUp() {
       email: formData.target[1].value,
       password: formData.target[2].value,
     };
+    dispatch(register(userData));
   };
 
   return <AuthForm handleSubmit={handleSubmit} />;
