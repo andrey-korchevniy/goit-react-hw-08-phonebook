@@ -4,7 +4,7 @@ import { NavMenu } from './NavMenu/NavMenu';
 import { Suspense } from 'react';
 import { Spinner } from 'react-bootstrap';
 
-const Layout = () => {
+export default function Layout() {
   return (
     <Container>
       <Suspense fallback={<Spinner />}>
@@ -15,6 +15,4 @@ const Layout = () => {
       </Suspense>
     </Container>
   );
-};
-
-export default Layout;
+}

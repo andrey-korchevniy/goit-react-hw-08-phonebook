@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import { NewContactForm } from 'components/NewContactForm/NewContactForm';
 import { CgClose } from 'react-icons/cg';
 
-const NewContact = () => {
+export default function NewContact() {
   return (
     <>
       <Link to={'/'}>
@@ -11,6 +11,4 @@ const NewContact = () => {
       <NewContactForm />
     </>
   );
-};
-
-export default NewContact;
+}

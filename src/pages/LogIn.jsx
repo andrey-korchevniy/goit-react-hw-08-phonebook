@@ -2,7 +2,7 @@ import AuthForm from 'components/AuthForm/AuthForm';
 import { useDispatch } from 'react-redux';
 import { logIn } from 'redux/auth/auth-operations';
 
-function LogIn() {
+export default function LogIn() {
   const dispatch = useDispatch();
 
   const handleSubmit = formData => {
@@ -17,5 +17,3 @@ function LogIn() {
 
   return <AuthForm isLoginForm={true} handleSubmit={handleSubmit} />;
 }
-
-export default LogIn;

@@ -17,7 +17,6 @@ export const FilterBar = () => {
   const dispatch = useDispatch();
 
   const onSubmit = data => {
-    console.log(data.currentTarget.value);
     dispatch(setFilter(data.currentTarget.value));
   };
 

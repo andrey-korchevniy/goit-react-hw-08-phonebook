@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux';
 import { getIsRefreshingUser } from 'redux/selectors';
 import { Spinner } from 'react-bootstrap';
 
-const Contacts = () => {
+export default function Contacts () {
   const isRefreshingUser = useSelector(getIsRefreshingUser);
 
   return isRefreshingUser ? (
@@ -17,5 +17,3 @@ const Contacts = () => {
     </>
   );
 };
-
-export default Contacts;

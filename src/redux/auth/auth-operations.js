@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { BASE_URL } from 'constants/constants';
+import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
 axios.defaults.baseURL = BASE_URL;
 
@@ -19,7 +20,11 @@ export const register = createAsyncThunk('auth/register', async credentials => {
     token.set(data.token);
     return data;
   } catch (error) {
-    console.log(error);
+    const message =
+      error.response.status === 500
+        ? 'We have some problems with server'
+        : 'There`s error on your side. Try later.';
+    Notify.failure(message);
   }
 });
 
@@ -29,7 +34,7 @@ export const logIn = createAsyncThunk('auth/login', async credentials => {
     token.set(data.token);
     return data;
   } catch (error) {
-    console.log(error);
+    Notify.failure('Login or password are incorrect');
   }
 });
 
@@ -38,7 +43,11 @@ export const logOut = createAsyncThunk('users/logout', async () => {
     await axios.post('users/logout');
     token.unset();
   } catch (error) {
-    console.log(error);
+    const message =
+      error.response.status === 500
+        ? 'We have some problems with server'
+        : 'There`s error on your side. Try later.';
+    Notify.failure(message);
   }
 });
 
@@ -56,7 +65,7 @@ export const fetchCurrentUser = createAsyncThunk(
       const { data } = await axios.get('/users/current');
       return data;
     } catch (error) {
-      console.log(error);
+      Notify.failure('There are some problem with your side');
     }
   }
 );
