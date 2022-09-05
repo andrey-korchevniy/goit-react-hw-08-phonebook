@@ -36,7 +36,6 @@ export const LogoutBtn = styled.button`
   padding: 2px 24px;
   transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1),
     opacity 15ms linear 30ms, transform 270ms 0ms cubic-bezier(0, 0, 0.2, 1);
-  /* transition-property: box-shadow, background-color, transform; */
   transition-duration: 24ms, 100ms, 270ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-delay: 0s, 30ms, 0ms;
