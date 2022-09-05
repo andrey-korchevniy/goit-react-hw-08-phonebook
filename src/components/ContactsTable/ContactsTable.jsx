@@ -8,7 +8,7 @@ import { Spinner } from 'react-bootstrap';
 export const ContactsTable = () => {
   let contactsForRender = null;
 
-  const { data, isSuccess, isError, refetch } = useGetServerApiQuery('', {
+  const { data, isSuccess, isError } = useGetServerApiQuery('', {
     refetchOnFocus: true,
   });
 

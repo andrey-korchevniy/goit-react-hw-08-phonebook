@@ -1,5 +1,5 @@
 import { Routes, Route } from 'react-router-dom';
-import { lazy, Suspense } from 'react';
+import { lazy } from 'react';
 import { Spinner } from 'components/UI/Spinner/Spinner';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
@@ -17,6 +17,7 @@ const SignUp = lazy(() => import('./pages/SignUp'));
 export const App = () => {
   const dispatch = useDispatch();
   const isRefreshingUser = useSelector(getIsRefreshingUser);
+  console.log(isRefreshingUser);
 
   useEffect(() => {
     dispatch(fetchCurrentUser());
@@ -25,7 +26,7 @@ export const App = () => {
   return isRefreshingUser ? (
     <Spinner />
   ) : (
-    <Suspense fallback={<Spinner />}>
+    <>
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route
@@ -62,6 +63,6 @@ export const App = () => {
           ></Route>
         </Route>
       </Routes>
-    </Suspense>
+    </>
   );
 };

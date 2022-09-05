@@ -1,4 +1,5 @@
 import { PhoneInputLine } from './PhoneInputField.styled';
+import PropTypes from 'prop-types';
 
 export const PhoneInputField = ({ field, form }) => {
   return (
@@ -8,4 +9,9 @@ export const PhoneInputField = ({ field, form }) => {
       onChange={number => (form.values.number = number)}
     />
   );
+};
+
+PhoneInputField.propTypes = {
+  field: PropTypes.object,
+  form: PropTypes.object.isRequired,
 };

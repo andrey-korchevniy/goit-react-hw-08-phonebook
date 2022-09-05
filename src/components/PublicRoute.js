@@ -1,5 +1,5 @@
 import { useSelector } from 'react-redux';
-import { getIsLoggedIn, getIsRefreshingUser } from 'redux/selectors';
+import { getIsLoggedIn } from 'redux/selectors';
 import { Navigate } from 'react-router-dom';
 
 export default function PublicRoute({

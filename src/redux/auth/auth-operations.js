@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { createAsyncThunk, isRejectedWithValue } from '@reduxjs/toolkit';
+import { createAsyncThunk } from '@reduxjs/toolkit';
 import { BASE_URL } from 'constants/constants';
 
 axios.defaults.baseURL = BASE_URL;
