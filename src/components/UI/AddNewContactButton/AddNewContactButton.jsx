@@ -1,6 +1,4 @@
 import cross from 'images/cross.png';
-import { useSelector } from 'react-redux';
-import { getIsLoggedIn } from 'redux/selectors';
 import { Title, AddContactBtn } from './AddNewContactButton.styled';
 
 // big button with cross and 'New contact'
