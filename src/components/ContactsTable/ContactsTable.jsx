@@ -1,12 +1,14 @@
 import { Table, HeadRow, HeadCell } from './ContactsTable.styled';
 import { ContactRow } from './ContactRow/ContactRow';
-import { useGetServerApiQuery } from 'redux/apiSlice';
+import { useGetServerApiQuery } from 'redux/serverApi';
 import { getFilter } from 'redux/selectors';
 import { useSelector } from 'react-redux';
+import { Spinner } from 'react-bootstrap';
 
 export const ContactsTable = () => {
-  let contactsForRender = [];
-  const { data, isSuccess, isError } = useGetServerApiQuery('', {
+  let contactsForRender = null;
+
+  const { data, isSuccess, isError, refetch } = useGetServerApiQuery('', {
     refetchOnFocus: true,
   });
 
@@ -21,7 +23,7 @@ export const ContactsTable = () => {
       .reverse();
   }
 
-  return (
+  return contactsForRender !== null ? (
     <>
       <Table>
         <HeadRow>
@@ -41,5 +43,7 @@ export const ContactsTable = () => {
         <h2>An error appeared to be on our side... We're so sorry :(</h2>
       )}
     </>
+  ) : (
+    <Spinner />
   );
 };

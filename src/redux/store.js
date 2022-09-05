@@ -1,7 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { setupListeners } from '@reduxjs/toolkit/dist/query';
 import { filterSlice } from './filter/filterSlice';
-import { serverApi } from './apiSlice';
+import { serverApi } from './serverApi';
 import { middleware } from './middleware';
 import authReducer from './auth/auth-slice';
 import persistStore from 'redux-persist/es/persistStore';

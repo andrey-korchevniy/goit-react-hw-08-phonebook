@@ -4,6 +4,8 @@ import { BASE_URL } from 'constants/constants';
 export const serverApi = createApi({
   reducerPath: 'serverApi',
   refetchOnFocus: true,
+  refetchOnMountOrArgChange: true,
+  refetchOnReconnect: true,
   baseQuery: fetchBaseQuery({
     baseUrl: BASE_URL,
     prepareHeaders: (headers, { getState }) => {
@@ -20,6 +22,7 @@ export const serverApi = createApi({
     getServerApi: builder.query({
       query: () => `/contacts`,
       providesTags: ['TagContact'],
+      keepUnusedDataFor: 2,
     }),
     // create a new contact
     createContact: builder.mutation({

@@ -6,7 +6,7 @@ import {
   PURGE,
   REGISTER,
 } from 'redux-persist';
-import { serverApi } from './apiSlice';
+import { serverApi } from './serverApi';
 
 export const middleware = getDefaultMiddleware =>
   getDefaultMiddleware({

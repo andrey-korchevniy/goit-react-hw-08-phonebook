@@ -6,7 +6,6 @@ const NewContact = () => {
   return (
     <>
       <Link to={'/'}>
-        {' '}
         <CgClose size="2em" />
       </Link>
       <NewContactForm />
