@@ -7,7 +7,7 @@ import {
 } from './UserMenu.styled';
 import { IoMdLogOut } from 'react-icons/io';
 import { useDispatch, useSelector } from 'react-redux';
-import { getUserEmail } from 'redux/selectors';
+import { getUserEmail } from 'redux/auth/auth-selectors';
 import { logOut } from 'redux/auth/auth-operations';
 
 export const UserMenu = () => {

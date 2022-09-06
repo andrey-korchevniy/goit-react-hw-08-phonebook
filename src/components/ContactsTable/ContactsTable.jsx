@@ -1,14 +1,14 @@
 import { Table, HeadRow, HeadCell } from './ContactsTable.styled';
 import { ContactRow } from './ContactRow/ContactRow';
-import { useGetServerApiQuery } from 'redux/serverApi';
-import { getFilter } from 'redux/selectors';
+import { useGetContactsApiQuery } from 'redux/contacts-api/contactsApi';
+import { getFilter } from 'redux/filter/filter-selector';
 import { useSelector } from 'react-redux';
 import { Spinner } from 'react-bootstrap';
 
 export const ContactsTable = () => {
   let contactsForRender = null;
 
-  const { data, isSuccess, isError } = useGetServerApiQuery('', {
+  const { data, isSuccess, isError } = useGetContactsApiQuery('', {
     refetchOnFocus: true,
   });
 

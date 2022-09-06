@@ -26,11 +26,7 @@ function AuthForm({ isLoginForm = false, handleSubmit }) {
             />
           </Form.Group>
         )}
-        <Form.Group
-          // className="mb-3"
-          controlId="formBasicEmail"
-          className={styles.label}
-        >
+        <Form.Group controlId="formBasicEmail" className={styles.label}>
           <AiOutlineMail size="2em" />
           <Form.Control
             type="email"
@@ -39,11 +35,7 @@ function AuthForm({ isLoginForm = false, handleSubmit }) {
           />
         </Form.Group>
 
-        <Form.Group
-          // className="mb-3"
-          controlId="formBasicPassword"
-          className={styles.label}
-        >
+        <Form.Group controlId="formBasicPassword" className={styles.label}>
           <RiLockPasswordLine size="2em" />
           <Form.Control
             type="password"

@@ -9,7 +9,7 @@ import { Formik } from 'formik';
 import { clearFilter, setFilter } from 'redux/filter/filterSlice';
 import { FaSearch } from 'react-icons/fa';
 import { CgClose } from 'react-icons/cg';
-import { getFilter } from 'redux/selectors';
+import { getFilter } from 'redux/filter/filter-selector';
 
 export const FilterBar = () => {
   const filter = useSelector(getFilter);

@@ -1,8 +1,8 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { setupListeners } from '@reduxjs/toolkit/dist/query';
 import { filterSlice } from './filter/filterSlice';
-import { serverApi } from './serverApi';
-import { middleware } from './middleware';
+import { contactsApi } from './contacts-api/contactsApi';
+import { middleware } from './contacts-api/middleware';
 import authReducer from './auth/auth-slice';
 import persistStore from 'redux-persist/es/persistStore';
 import storage from 'redux-persist/lib/storage';
@@ -16,7 +16,7 @@ const authReducerConfig = {
 
 export const store = configureStore({
   reducer: {
-    [serverApi.reducerPath]: serverApi.reducer,
+    [contactsApi.reducerPath]: contactsApi.reducer,
     filter: filterSlice.reducer,
     auth: persistReducer(authReducerConfig, authReducer),
   },

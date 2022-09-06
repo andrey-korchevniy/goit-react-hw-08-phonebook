@@ -3,9 +3,9 @@ import { Spinner } from 'components/UI/Spinner/Spinner';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { fetchCurrentUser } from 'redux/auth/auth-operations';
-import PrivateRoute from 'components/PrivateRoute';
-import PublicRoute from 'components/PublicRoute';
-import { getIsRefreshingUser } from 'redux/selectors';
+import PrivateRoute from 'hocs/PrivateRoute';
+import PublicRoute from 'hocs/PublicRoute';
+import { getIsRefreshingUser } from 'redux/auth/auth-selectors';
 import Layout from 'layout/Layout';
 import Contacts from 'pages/Contacts';
 import NewContact from 'pages/NewContact/NewContact';
@@ -19,6 +19,7 @@ import Home from 'pages/Home';
 // const NewContact = lazy(() => import('./pages/NewContact/NewContact'));
 // const LogIn = lazy(() => import('./pages/LogIn'));
 // const SignUp = lazy(() => import('./pages/SignUp'));
+// const Home = lazy(() => import('./pages/Home'));
 
 export const App = () => {
   const dispatch = useDispatch();

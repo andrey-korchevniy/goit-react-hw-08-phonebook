@@ -1,8 +1,8 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 import { BASE_URL } from 'constants/constants';
 
-export const serverApi = createApi({
-  reducerPath: 'serverApi',
+export const contactsApi = createApi({
+  reducerPath: 'contactsApi',
   refetchOnFocus: true,
   refetchOnMountOrArgChange: true,
   refetchOnReconnect: true,
@@ -19,7 +19,7 @@ export const serverApi = createApi({
   tagTypes: ['TagContact'],
   endpoints: builder => ({
     // get all contacts
-    getServerApi: builder.query({
+    getContactsApi: builder.query({
       query: () => `/contacts`,
       providesTags: ['TagContact'],
       keepUnusedDataFor: 2,
@@ -45,7 +45,7 @@ export const serverApi = createApi({
 });
 
 export const {
-  useGetServerApiQuery,
+  useGetContactsApiQuery,
   useCreateContactMutation,
   useDeleteContactMutation,
-} = serverApi;
+} = contactsApi;

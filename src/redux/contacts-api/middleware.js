@@ -6,11 +6,11 @@ import {
   PURGE,
   REGISTER,
 } from 'redux-persist';
-import { serverApi } from './serverApi';
+import { contactsApi } from './contactsApi';
 
 export const middleware = getDefaultMiddleware =>
   getDefaultMiddleware({
     serializableCheck: {
       ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
     },
-  }).concat(serverApi.middleware);
+  }).concat(contactsApi.middleware);

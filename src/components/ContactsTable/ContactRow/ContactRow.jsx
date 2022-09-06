@@ -6,7 +6,7 @@ import {
   CellAction,
 } from './ContactRow.styled';
 import PropTypes from 'prop-types';
-import { useDeleteContactMutation } from 'redux/serverApi';
+import { useDeleteContactMutation } from 'redux/contacts-api/contactsApi';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import { RiDeleteBin5Line } from 'react-icons/ri';
 
