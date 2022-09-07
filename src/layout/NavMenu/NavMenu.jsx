@@ -10,7 +10,8 @@ import { UserMenu } from './UserMenu/UserMenu';
 
 export const NavMenu = () => {
   const isLoggedIn = useSelector(getIsLoggedIn);
-  const { data } = useGetContactsApiQuery(''); // get contacts list from state
+  const { data } = useGetContactsApiQuery(); // get contacts list from state
+
   const contactsQuantity = data && data.length; // calculate contacts quantity
 
   return (

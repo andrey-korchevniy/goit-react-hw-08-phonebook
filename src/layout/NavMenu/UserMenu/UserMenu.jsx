@@ -2,7 +2,7 @@ import {
   MenuItems,
   StyledEmail,
   P,
-  LogoutBtn,
+  LogoutLink,
   BtnText,
 } from './UserMenu.styled';
 import { IoMdLogOut } from 'react-icons/io';
@@ -26,9 +26,9 @@ export const UserMenu = () => {
         </StyledEmail>
       </li>
       <li>
-        <LogoutBtn type="submit" onClick={handleSubmit}>
+        <LogoutLink to="/" onClick={handleSubmit}>
           <IoMdLogOut /> <BtnText>Log Out</BtnText>
-        </LogoutBtn>
+        </LogoutLink>
       </li>
     </MenuItems>
   );

@@ -22,7 +22,6 @@ export const contactsApi = createApi({
     getContactsApi: builder.query({
       query: () => `/contacts`,
       providesTags: ['TagContact'],
-      keepUnusedDataFor: 2,
     }),
     // create a new contact
     createContact: builder.mutation({

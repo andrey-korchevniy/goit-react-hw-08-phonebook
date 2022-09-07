@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { NavLink } from 'react-router-dom';
 
 export const MenuItems = styled.ul`
   list-style-type: none;
@@ -21,32 +22,27 @@ export const P = styled.p`
 export const BtnText = styled.p`
   margin-left: 10px;
 `;
-export const LogoutBtn = styled.button`
+export const LogoutLink = styled(NavLink)`
   display: inline-flex;
-  margin: 10px 60px;
-  border: 0;
+  height: 36px;
+  margin: 10px 65px;
+  padding: 2px 10px 0 8px;
+  border-radius: 24px;
   background-color: #fff;
   align-items: center;
-  border-radius: 24px;
   box-shadow: 0 1px 2px 0 rgb(60 64 67 / 30%), 0 1px 3px 1px rgb(60 64 67 / 15%);
   box-sizing: border-box;
   cursor: pointer;
-  height: 38px;
+  text-decoration: none;
   justify-content: center;
-  padding: 2px 24px;
-  transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1),
-    opacity 15ms linear 30ms, transform 270ms 0ms cubic-bezier(0, 0, 0.2, 1);
-  transition-duration: 24ms, 100ms, 270ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-delay: 0s, 30ms, 0ms;
+  color: #202124;
+  transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);
 
   :hover {
     background-color: #f6fafe;
   }
 
   :active {
-    border-color: rgb(66, 133, 244);
-    border-width: 2px;
-    border-style: solid;
+    border: 2px solid rgb(66, 133, 244);
   }
 `;

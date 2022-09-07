@@ -10,30 +10,23 @@ export const Title = styled.span`
 `;
 export const AddContactBtn = styled(NavLink)`
   display: inline-flex;
+  height: 48px;
   margin: 23px 0;
-  border: 0;
-  background-color: #fff;
-  align-items: center;
   border-radius: 24px;
+  padding: 2px 24px;
+  align-items: center;
+  background-color: #fff;
+  text-decoration: none;
   box-shadow: 0 1px 2px 0 rgb(60 64 67 / 30%), 0 1px 3px 1px rgb(60 64 67 / 15%);
   box-sizing: border-box;
   cursor: pointer;
-  height: 48px;
-  justify-content: center;
-  padding: 2px 24px;
-  transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1),
-    opacity 15ms linear 30ms, transform 270ms 0ms cubic-bezier(0, 0, 0.2, 1);
-  transition-duration: 24ms, 100ms, 270ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-delay: 0s, 30ms, 0ms;
+  transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);
 
   :hover {
     background-color: #f6fafe;
   }
 
   :active {
-    border-color: rgb(66, 133, 244);
-    border-width: 2px;
-    border-style: solid;
+    border: 2px solid rgb(66, 133, 244);
   }
 `;

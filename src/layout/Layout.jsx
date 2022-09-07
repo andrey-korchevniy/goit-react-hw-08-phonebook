@@ -7,12 +7,10 @@ import { Spinner } from 'react-bootstrap';
 export default function Layout() {
   return (
     <Container>
-      <Suspense fallback={<Spinner />}>
-        <NavMenu />
-        <Main>
-          <Outlet />
-        </Main>
-      </Suspense>
+      <NavMenu />
+      <Main>
+        <Outlet />
+      </Main>
     </Container>
   );
 }
